@@ -315,24 +315,6 @@ python main.py --bonus
 
 ### Author
 
-- **Student**: [Your Name]
+- **Student**: Nikiforos Maragkos
 - **Course**: NLP Assignment 2025
-- **Institution**: [Your University]
-
-### Acknowledgments
-
-- Course instructors για guidance
-- Open source community για libraries
-- Research community για foundational papers
-
-## 📄 License
-
-This project is created for academic purposes as part of the NLP Assignment 2025.
-
----
-
-**🎯 Project Status**: ✅ Complete and Ready for Submission
-
-**📅 Last Updated**: June 2025
-
-**🔗 Repository**: [Your Repository URL]
+- **AM**:P22095
