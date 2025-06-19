@@ -1,0 +1,175 @@
+{
+  "custom_pipeline": {
+    "sentence_1": {
+      "original": "Thank your message to show our words to the doctor, as his next contract checking, to all of us.",
+      "reconstructed": "Thank you for your message conveying our words to the doctor, regarding his next contract review for all of us.",
+      "corrections": [
+        "Phrase replacement: 'Thank your message to show our words to the doctor' -> 'Thank you for your message conveying our words to the doctor'",
+        "Phrase replacement: 'as his next contract checking, to all of us' -> 'regarding his next contract review for all of us'"
+      ],
+      "confidence_score": 0.8,
+      "processing_steps": [
+        "Applied phrase replacements"
+      ]
+    },
+    "sentence_2": {
+      "original": "During our ﬁnal discuss, I told him about the new submission — the one we were waiting since last autumn, but the updates was confusing as it not included the full feedback from reviewer or maybe editor?",
+      "reconstructed": "During our final discussion, I told him about the new submission — the one we had been waiting since last autumn, but the updates were confusing as they did not include the full feedback from reviewer, or maybe editor.",
+      "corrections": [
+        "Grammar: '\\bDuring\\s+our\\s+ﬁnal\\s+discuss' -> 'During our final discussion'",
+        "Grammar: '\\bwe\\s+were\\s+waiting\\s+since' -> 'we had been waiting since'",
+        "Grammar: '\\bthe\\s+updates\\s+was\\s+confusing' -> 'the updates were confusing'",
+        "Grammar: '\\bas\\s+it\\s+not\\s+included' -> 'as they did not include'",
+        "Punctuation: '(\\w+)\\s+(and|but|or)\\s+(\\w+)' -> '\\1, \\2 \\3'"
+      ],
+      "confidence_score": 0.9500000000000001,
+      "processing_steps": [
+        "Applied grammar rules",
+        "Applied punctuation rules"
+      ]
+    }
+  },
+  "library_pipelines": {
+    "text_1": {
+      "pipeline_1": {
+        "pipeline_name": "LanguageTool + spaCy Pipeline",
+        "original_text": "Today is our dragon boat festival, in our Chinese culture, to celebrate it with all safe and great in our lives. Hope you too, to enjoy it as my deepest wishes. Thank your message to show our words to the doctor, as his next contract checking, to all of us. I got this message to see the approved message. In fact, I have received the message from the professor, to show me, this, a couple of days ago. I am very appreciated the full support of the professor, for our Springer proceedings publication",
+        "reconstructed_text": "Today is our dragon boat festival, in our Chinese culture, to celebrate it with all safe and great in our lives. Hope you too, to enjoy it as my deepest wishes. Thank you for your message to show our words to the doctor, as his next contract checking, to all of us. I got this message to see the approved message. In fact, I have received the message from the professor, to show me, this, a couple of days ago. I very much appreciate the full support of the professor, for our Springer proceedings publication",
+        "corrections": [
+          "Grammar: Applied rule for '\\bThank\\s+your\\s+message'",
+          "Grammar: Applied rule for '\\bI\\s+am\\s+very\\s+appreciated'"
+        ],
+        "confidence_score": 0.7999999999999999,
+        "processing_time": 0.0010073184967041016,
+        "methodology": "Grammar checking with rule-based corrections"
+      },
+      "pipeline_2": {
+        "pipeline_name": "BERT Masked Language Model Pipeline",
+        "original_text": "Today is our dragon boat festival, in our Chinese culture, to celebrate it with all safe and great in our lives. Hope you too, to enjoy it as my deepest wishes. Thank your message to show our words to the doctor, as his next contract checking, to all of us. I got this message to see the approved message. In fact, I have received the message from the professor, to show me, this, a couple of days ago. I am very appreciated the full support of the professor, for our Springer proceedings publication",
+        "reconstructed_text": "Today is our dragon boat festival, in our Chinese culture, to celebrate it with all safe and great in our lives. Hope you too, to enjoy it as my deepest wishes. Thank your message to show our words to the doctor, as his next contract checking, to all of us. I got this message to see the approved message. In fact, I have received the message from the professor, to show me, this, a couple of days ago. I am very appreciated the full support of the professor, for our Springer proceedings publication",
+        "corrections": [],
+        "confidence_score": 0.4,
+        "processing_time": 0.0,
+        "methodology": "BERT-based masked language modeling for error correction"
+      },
+      "pipeline_3": {
+        "pipeline_name": "T5 Text-to-Text Generation Pipeline",
+        "original_text": "Today is our dragon boat festival, in our Chinese culture, to celebrate it with all safe and great in our lives. Hope you too, to enjoy it as my deepest wishes. Thank your message to show our words to the doctor, as his next contract checking, to all of us. I got this message to see the approved message. In fact, I have received the message from the professor, to show me, this, a couple of days ago. I am very appreciated the full support of the professor, for our Springer proceedings publication",
+        "reconstructed_text": "Today is our dragon boat festival, in our Chinese culture, to celebrate it with all safe and great in our lives. Hope you too, to enjoy it as my deepest wishes. Thank you for your message to show our words to the doctor, as his next contract checking, to all of us. I got this message to see the approved message. In fact, I have received the message from the professor, to show me, this, a couple of days ago. I very much appreciate the full support of the professor, for our Springer proceedings publication",
+        "corrections": [
+          "T5-PostProcess: 'Thank your message' -> 'Thank you for your message'",
+          "T5-PostProcess: 'I am very appreciated' -> 'I very much appreciate'"
+        ],
+        "confidence_score": 0.58,
+        "processing_time": 0.0,
+        "methodology": "T5-based text-to-text generation for grammar correction"
+      }
+    },
+    "text_2": {
+      "pipeline_1": {
+        "pipeline_name": "LanguageTool + spaCy Pipeline",
+        "original_text": "During our ﬁnal discuss, I told him about the new submission — the one we were waiting since last autumn, but the updates was confusing as it not included the full feedback from reviewer or maybe editor? Anyway, I believe the team, although bit delay and less communication at recent days, they really tried best for paper and cooperation. We should be grateful, I mean all of us, for the acceptance and eﬀorts until the Springer link came ﬁnally last week, I think. Also, kindly remind me please, if the doctor still plan for the acknowledgments section edit before he sending again. Because I didn't see that part ﬁnal yet, or maybe I missed, I apologize if so. Overall, let us make sure all are safe and celebrate the outcome with strong coﬀee and future targets",
+        "reconstructed_text": "during our final discussion, I told him about the new submission — the one we had been waiting since last autumn, but the updates were confusing as it not included the full feedback from reviewer or maybe editor? Anyway, I believe the team, although bit delay and less communication at recent days, they really tried best for paper and cooperation. We should be grateful, I mean all of us, for the acceptance and efforts until the Springer link came finally last week, I think. Also, kindly remind me please, if the doctor still plan for the acknowledgments section edit before he sending again. Because I didn't see that part final yet, or maybe I missed, I apologize if so. Overall, let us make sure all are safe and celebrate the outcome with strong coffee and future targets",
+        "corrections": [
+          "Encoding: 'ﬁnal' -> 'final'",
+          "Encoding: 'eﬀorts' -> 'efforts'",
+          "Encoding: 'coﬀee' -> 'coffee'",
+          "Grammar: Applied rule for '\\bduring\\s+our\\s+final\\s+discuss'",
+          "Grammar: Applied rule for '\\bwe\\s+were\\s+waiting\\s+since'",
+          "Grammar: Applied rule for '\\bthe\\s+updates\\s+was\\s+confusing'"
+        ],
+        "confidence_score": 0.8999999999999999,
+        "processing_time": 0.00099945068359375,
+        "methodology": "Grammar checking with rule-based corrections"
+      },
+      "pipeline_2": {
+        "pipeline_name": "BERT Masked Language Model Pipeline",
+        "original_text": "During our ﬁnal discuss, I told him about the new submission — the one we were waiting since last autumn, but the updates was confusing as it not included the full feedback from reviewer or maybe editor? Anyway, I believe the team, although bit delay and less communication at recent days, they really tried best for paper and cooperation. We should be grateful, I mean all of us, for the acceptance and eﬀorts until the Springer link came ﬁnally last week, I think. Also, kindly remind me please, if the doctor still plan for the acknowledgments section edit before he sending again. Because I didn't see that part ﬁnal yet, or maybe I missed, I apologize if so. Overall, let us make sure all are safe and celebrate the outcome with strong coﬀee and future targets",
+        "reconstructed_text": "During our final discuss, I told him about the new submission — the one we were waiting since last autumn, but the updates was confusing as it not included the full feedback from reviewer or maybe editor? Anyway, I believe the team, although bit delay and less communication at recent days, they really tried best for paper and cooperation. We should be grateful, I mean all of us, for the acceptance and efforts until the Springer link came finally last week, I think. Also, kindly remind me please, if the doctor still plan for the acknowledgments section edit before he sending again. Because I didn't see that part final yet, or maybe I missed, I apologize if so. Overall, let us make sure all are safe and celebrate the outcome with strong coffee and future targets",
+        "corrections": [
+          "BERT: Fixed character encoding issues"
+        ],
+        "confidence_score": 0.43000000000000005,
+        "processing_time": 0.0,
+        "methodology": "BERT-based masked language modeling for error correction"
+      },
+      "pipeline_3": {
+        "pipeline_name": "T5 Text-to-Text Generation Pipeline",
+        "original_text": "During our ﬁnal discuss, I told him about the new submission — the one we were waiting since last autumn, but the updates was confusing as it not included the full feedback from reviewer or maybe editor? Anyway, I believe the team, although bit delay and less communication at recent days, they really tried best for paper and cooperation. We should be grateful, I mean all of us, for the acceptance and eﬀorts until the Springer link came ﬁnally last week, I think. Also, kindly remind me please, if the doctor still plan for the acknowledgments section edit before he sending again. Because I didn't see that part ﬁnal yet, or maybe I missed, I apologize if so. Overall, let us make sure all are safe and celebrate the outcome with strong coﬀee and future targets",
+        "reconstructed_text": "during our final discussion, I told him about the new submission — the one we were waiting since last autumn, but the updates was confusing as it not included the full feedback from reviewer or maybe editor? Anyway, I believe the team, although bit delay and less communication at recent days, they really tried best for paper and cooperation. We should be grateful, I mean all of us, for the acceptance and efforts until the Springer link came finally last week, I think. Also, kindly remind me please, if the doctor still plan for the acknowledgments section edit before he sending again. Because I didn't see that part final yet, or maybe I missed, I apologize if so. Overall, let us make sure all are safe and celebrate the outcome with strong coffee and future targets",
+        "corrections": [
+          "T5-PostProcess: 'ﬁnal' -> 'final'",
+          "T5-PostProcess: 'eﬀorts' -> 'efforts'",
+          "T5-PostProcess: 'coﬀee' -> 'coffee'",
+          "T5-PostProcess: 'during our final discuss' -> 'during our final discussion'"
+        ],
+        "confidence_score": 0.66,
+        "processing_time": 0.0,
+        "methodology": "T5-based text-to-text generation for grammar correction"
+      }
+    }
+  },
+  "comparison": {
+    "custom_method_metrics": {
+      "method_name": "Custom Pipeline",
+      "total_corrections": 7,
+      "average_confidence": 0.875,
+      "processing_time": 0,
+      "text_quality_score": 0.7142857142857143,
+      "readability_score": 0.7487179487179487,
+      "grammar_improvement_score": 1.0
+    },
+    "library_methods_metrics": {
+      "LanguageTool + spaCy Pipeline": {
+        "method_name": "LanguageTool + spaCy Pipeline",
+        "total_corrections": 8,
+        "average_confidence": 0.8499999999999999,
+        "processing_time": 0.0020067691802978516,
+        "text_quality_score": 0.8,
+        "readability_score": 0.7641615443718786,
+        "grammar_improvement_score": 0.8333333333333333
+      },
+      "BERT Masked Language Model Pipeline": {
+        "method_name": "BERT Masked Language Model Pipeline",
+        "total_corrections": 1,
+        "average_confidence": 0.41500000000000004,
+        "processing_time": 0.0,
+        "text_quality_score": 0.6857142857142857,
+        "readability_score": 0.7756008855154966,
+        "grammar_improvement_score": 0.0
+      },
+      "T5 Text-to-Text Generation Pipeline": {
+        "method_name": "T5 Text-to-Text Generation Pipeline",
+        "total_corrections": 6,
+        "average_confidence": 0.62,
+        "processing_time": 0.0,
+        "text_quality_score": 0.7714285714285714,
+        "readability_score": 0.7638931888544891,
+        "grammar_improvement_score": 0.5
+      }
+    },
+    "best_performers": {
+      "best_text_quality": "LanguageTool + spaCy Pipeline",
+      "best_readability": "BERT Masked Language Model Pipeline",
+      "best_grammar_improvement": "Custom Pipeline",
+      "fastest_processing": "Custom Pipeline",
+      "most_corrections": "LanguageTool + spaCy Pipeline"
+    },
+    "summary_statistics": {
+      "total_methods_compared": 4,
+      "average_quality_score": 0.7428571428571429,
+      "average_readability_score": 0.7630933918649532,
+      "average_grammar_score": 0.5833333333333333,
+      "total_processing_time": 0.0020067691802978516
+    },
+    "comparison_insights": [
+      "Library pipelines demonstrate better text quality improvement on average",
+      "Custom pipeline is more efficient in terms of processing time",
+      "Custom pipeline excels at grammar correction compared to library methods"
+    ]
+  },
+  "metadata": {
+    "timestamp": "2025-06-19 16:55:28.109383",
+    "version": "1.0"
+  }
+}
